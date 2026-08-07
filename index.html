@@ -11,11 +11,11 @@
 :root{
   --pink:#ff489e;
   --blue:#0f5ea8;
-  --yellow:#ffd400;
+  --yellow:#ff489e;
   --green:#00a95c;
   --orange:#ff6a13;
-  --stock:#f4f1e6;
-  --stock-2:#eae5d4;
+  --stock:#dde2ea;
+  --stock-2:#cfd6e1;
   --ink:#16130f;
   --grey:#8f887a;
 }
@@ -42,7 +42,7 @@ header{
 .blob{position:absolute;border-radius:50%;mix-blend-mode:multiply;pointer-events:none}
 .b1{width:340px;height:340px;background:var(--pink);opacity:.5;top:-150px;left:-90px}
 .b2{width:280px;height:280px;background:var(--blue);opacity:.42;top:-110px;left:20px}
-.b3{width:200px;height:200px;background:var(--yellow);opacity:.65;bottom:-100px;right:8%}
+.b3{width:200px;height:200px;background:var(--green);opacity:.5;bottom:-100px;right:8%}
 .b4{width:150px;height:150px;background:var(--green);opacity:.38;bottom:-70px;right:16%}
 
 .mast{max-width:1080px;margin:0 auto;position:relative;z-index:2}
@@ -71,7 +71,7 @@ main{max-width:1080px;margin:0 auto;padding:26px 20px 90px}
 
 /* ── control strip, taped down ──────────────────────────────────── */
 .controls{
-  background:var(--yellow);border:3px solid var(--ink);
+  background:var(--stock-2);border:3px solid var(--ink);
   padding:16px 18px;margin-bottom:34px;position:relative;
   box-shadow:6px 6px 0 var(--ink);transform:rotate(-.4deg);
   display:flex;gap:22px;flex-wrap:wrap;align-items:flex-end;
@@ -99,55 +99,86 @@ select:focus,input:focus{background:#fff}
 
 /* ── week cards: photocopied, taped, rotated ────────────────────── */
 .week{
-  background:var(--stock);border:3px solid var(--ink);
+  --w-ink:var(--ink); --w-accent:var(--pink); --w-second:var(--blue);
+  --w-paper:var(--stock); --w-on-accent:#fff;
+  background:var(--w-paper);border:3px solid var(--w-ink);
   margin-bottom:30px;position:relative;
-  box-shadow:7px 7px 0 rgba(22,19,15,.85);
+  box-shadow:7px 7px 0 var(--w-ink);
 }
 .week:nth-child(odd){transform:rotate(-.35deg)}
 .week:nth-child(even){transform:rotate(.3deg)}
 .tape{
   position:absolute;top:-13px;left:34px;width:96px;height:26px;
-  background:rgba(255,212,0,.75);border:1px dashed rgba(22,19,15,.4);
+  background:var(--w-accent);opacity:.55;border:1px dashed rgba(22,19,15,.4);
   transform:rotate(-4deg);z-index:3;mix-blend-mode:multiply;
 }
-.tape.r{left:auto;right:44px;transform:rotate(3deg);background:rgba(255,72,158,.45)}
+.tape.r{left:auto;right:44px;transform:rotate(3deg);background:var(--w-second);opacity:.4}
 
-.week-hd{display:flex;align-items:stretch;gap:0;border-bottom:3px solid var(--ink)}
+.week-hd{display:flex;align-items:stretch;gap:0;border-bottom:3px solid var(--w-ink);background:var(--w-paper)}
 .wnum{
   font-family:'Anton',sans-serif;font-size:clamp(34px,6vw,62px);line-height:1;
-  color:var(--stock);background:var(--ink);
+  color:var(--w-paper);background:var(--w-ink);
   padding:14px 16px;min-width:96px;display:flex;align-items:center;justify-content:center;
 }
 .week-titles{flex:1;padding:12px 16px;min-width:0;display:flex;flex-direction:column;justify-content:center}
-.wdate{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:4px}
+.wdate{font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--w-second);margin-bottom:4px}
 .wtitle{font-family:'Anton',sans-serif;font-size:clamp(16px,2.6vw,25px);text-transform:uppercase;line-height:1.05;letter-spacing:.3px}
 .badge{
   align-self:center;margin-right:14px;flex:none;
   font-family:'Space Mono',monospace;font-weight:700;font-size:10px;letter-spacing:2px;
-  text-transform:uppercase;padding:6px 11px;border:3px solid var(--ink);white-space:nowrap;
+  text-transform:uppercase;padding:6px 11px;border:3px solid var(--w-ink);white-space:nowrap;
+  background:var(--w-accent);color:var(--w-on-accent);
 }
-.badge.content{background:var(--stock-2)}
-.badge.proof{background:var(--pink);color:#fff}
-.badge.final{background:var(--blue);color:#fff}
-.badge.closed{background:var(--grey);color:#fff}
 
 .week-body{padding:16px}
+.swatch{
+  font-family:'Space Mono',monospace;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--w-ink);opacity:.65;padding:8px 16px 0;
+}
+.swatch em{font-style:italic;text-transform:none;letter-spacing:.5px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:8px}
 .chip{
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
-  border:3px solid var(--ink);background:var(--stock-2);color:var(--ink);
+  border:3px solid var(--w-ink);background:rgba(255,255,255,.55);color:var(--w-ink);
   text-decoration:none;padding:9px 5px;min-height:56px;text-align:center;
   transition:transform .07s,box-shadow .07s,background .15s;
-  box-shadow:3px 3px 0 var(--ink);
+  box-shadow:3px 3px 0 var(--w-ink);
 }
 .chip .n{font-family:'Anton',sans-serif;font-size:19px;line-height:1}
 .chip .nm{font-family:'Space Mono',monospace;font-size:9px;line-height:1.15;word-break:break-word;letter-spacing:.3px}
-.chip:hover{background:var(--yellow);transform:translate(1px,1px);box-shadow:2px 2px 0 var(--ink)}
-.chip:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink)}
+.chip:hover{background:var(--w-second);color:#fff;transform:translate(1px,1px);box-shadow:2px 2px 0 var(--w-ink)}
+.chip:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--w-ink)}
 .chip:focus-visible{outline:4px solid var(--blue);outline-offset:2px}
-.chip.hit{background:var(--pink);color:#fff}
+.chip.hit{background:var(--w-accent);color:var(--w-on-accent)}
 .chip.dim{opacity:.16}
 
+.comet{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  border:3px solid var(--w-ink);background:var(--w-ink);color:var(--w-paper);
+  padding:13px 16px;margin-bottom:16px;text-decoration:none;
+  box-shadow:4px 4px 0 var(--w-accent);transition:transform .07s,box-shadow .07s;
+}
+.comet:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--w-accent)}
+.comet:active{transform:translate(4px,4px);box-shadow:0 0 0 var(--w-accent)}
+.comet:focus-visible{outline:4px solid var(--w-second);outline-offset:3px}
+.comet-star{font-family:'Anton',sans-serif;font-size:30px;line-height:1;color:var(--w-accent);flex:none}
+.comet-txt{flex:1;min-width:160px}
+.comet-no{display:block;font-family:'Space Mono',monospace;font-weight:700;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--w-accent);margin-bottom:2px}
+.comet-t{display:block;font-family:'Anton',sans-serif;font-size:26px;text-transform:uppercase;letter-spacing:.5px;line-height:1}
+.comet-s{display:block;font-family:'Space Mono',monospace;font-size:11px;line-height:1.5;opacity:.82;margin-top:5px}
+.comet-do{display:block;font-family:'Space Mono',monospace;font-weight:700;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;opacity:.6;margin-top:6px}
+.comet-go{
+  font-family:'Space Mono',monospace;font-weight:700;font-size:11px;letter-spacing:2px;
+  text-transform:uppercase;border:3px solid var(--w-paper);padding:7px 13px;flex:none;
+}
+.nocomet{
+  border:3px dashed var(--w-ink);padding:12px 16px;margin-bottom:16px;
+  font-family:'Space Mono',monospace;font-size:12px;line-height:1.6;
+}
+.chips-hd{
+  font-family:'Space Mono',monospace;font-weight:700;font-size:10px;letter-spacing:3px;
+  text-transform:uppercase;color:var(--w-ink);opacity:.7;margin-bottom:9px;
+}
 .closed-note{
   padding:18px;font-family:'Permanent Marker',cursive;font-size:clamp(15px,2.4vw,21px);
   color:var(--grey);transform:rotate(-1deg);
@@ -164,7 +195,7 @@ footer{
 }
 .colophon{max-width:1080px;margin:0 auto;font-size:12px;line-height:1.75}
 .colophon h2{font-family:'Anton',sans-serif;font-size:22px;text-transform:uppercase;margin-bottom:10px;color:var(--blue)}
-.colophon code{background:var(--yellow);padding:1px 5px;border:1px solid var(--ink);font-size:11px}
+.colophon code{background:#fff;padding:1px 5px;border:1px solid var(--ink);font-size:11px}
 .colophon a{color:var(--blue)}
 
 @media (max-width:620px){
@@ -225,14 +256,56 @@ footer{
     <p><strong>File layout.</strong> Each session has a folder. Inside it, one file per person:
       <code>week-01/artist_1.html</code> through <code>week-01/artist_24.html</code>, plus
       <code>artist_1.pdf</code> and <code>artist_1.txt</code> alongside. The final session lives in
-      <code>final/</code>. Files are exported straight out of <em>The Comet</em> and committed as they are.</p>
+      <code>final/</code>. Files are exported straight out of The Comet and committed without renaming.</p>
+    <p><strong>The Comet.</strong> One issue per reading week, sitting at the repository root as
+      <code>comet_1.html</code> through <code>comet_13.html</code>. Issue numbers follow week numbers, so
+      there is no issue 4, 8, or 12: those are proof days, which carry no reading and no response tool.
+      Ten issues in all, each the same tool with a different item list and a different colour scheme.</p>
+    <p><strong>Every issue is named after a real science fiction fanzine.</strong> Not decoration. The zine
+      this course produces belongs to a lineage that began in 1930 with <em>The Comet</em>, mimeographed by
+      the Science Correspondence Club in Chicago, and the names are a way of keeping that visible on the
+      page students open every week. A few are chosen for fit rather than chronology.
+      <em>Slant</em> sits on the permacomputing week because Walt Willis hand-set and printed it on a press
+      in his own house in Belfast. <em>Quandry</em> sits on the measurement week partly for its name and
+      partly because Lee Hoffman edited it under a gender-neutral byline and revealed herself as its editor
+      at Worldcon in 1951. <em>Cheap Truth</em> sits on the week where fiction tests the method, because
+      Bruce Sterling published it uncopyrighted, on one double-sided page, explicitly inviting xerox pirates
+      to reprint it, and used it to attack the state of the field. <em>Hyphen</em> closes the reading weeks
+      because it is named after a punctuation mark and that week is about form.</p>
     <p><strong>To put real names on the buttons</strong>, edit the <code>STUDENTS</code> list at the top of
       this file's script. Filenames never change, so nothing breaks when a name is added, corrected, or removed.
       Leave an entry empty and the button shows its number alone.</p>
     <p><strong>To change a session</strong>, edit the <code>SESSIONS</code> list in the same place.</p>
-    <p>Set in Anton, Space Mono, and Permanent Marker. Overprinted in fluorescent pink, process blue,
-      chrome yellow, and green, the way a two-pass riso never quite lines up.
-      Hosted on GitHub Pages. No trackers, no analytics, no cookies.</p>
+    <p><strong>Colour.</strong> Every session carries its own scheme, set in the <code>theme</code> field of
+      its entry: four values, <code>ink</code>, <code>accent</code>, <code>second</code>, and
+      <code>paper</code>, plus an optional <code>onAccent</code> for badge text when the accent runs light.
+      <strong>Each palette is lifted from a real cover</strong>, named under the heading of the card it
+      belongs to.</p>
+    <p><strong>Each card is the palette of its own issue.</strong> Week 1 uses the exact variables from
+      <code>comet_1.html</code>: aubergine, lime, deep teal, on pale lime. Open the card and the issue side
+      by side and they are the same object. The cards for issues not yet built are the specification for
+      them: when Comet No. 2 is made, it takes its <code>--cobalt</code>, <code>--chrome</code> and
+      <code>--pulpred</code> from the Week 2 card, not the other way round.</p>
+    <p>The inks and accents are taken from the covers named on each card; the papers are not.
+      Every stock in this set is a cool neutral, tinted only toward its own week's hue, because a page of
+      seventeen cream cards reads as one beige field rather than seventeen distinct sessions.
+      Weeks 1, 3 and 5 keep the navy and pulp red of <em>Amazing Stories</em> and a mid-century rocket
+      plate, over blue-whites. Week 6 keeps the crimson of an Ace <em>Vintage Science Fiction Month</em>
+      cover on pale rose, which suits a week about extraction and its accounting. Weeks 2 and 10 come from
+      a Japanese science magazine for children, Tokyo, November 1949: deep teal and a red-orange bus, over
+      mint. Week 8 takes the violet of a flying-saucer cover. Week 11 is <em>Space Cat on Mushrooms</em>,
+      brick red over clay. The proof days and Week 14 come from NoPattern Studio's
+      <em>Eternal Reference</em>, hot pink and magenta over plum and deep green. Weeks 7, 9, 13 and 15
+      come from contemporary zine spreads by Luana Lloyd: forest and terracotta, cobalt and hot pink,
+      dusty rose.</p>
+    <p>Every combination was checked on four pairs: the week number against its block, badge text against
+      accent, chip text on hover, and body text on paper. Nothing sits below a ratio of 3.</p>
+    <p>Every combination was checked on four pairs: the week number against its block, badge text against
+      accent, chip text on hover, and body text on paper. Nothing sits below a ratio of 3.</p>
+    <p>Every combination was checked for contrast on four pairs: the week number against its block, badge
+      text against accent, chip text on hover, and body text on paper. Nothing sits below a ratio of 3.</p>
+    <p>Set in Anton, Space Mono, and Permanent Marker. Overprinted the way a two-pass riso never quite
+      lines up. Hosted on GitHub Pages. No trackers, no analytics, no cookies.</p>
   </div>
 </footer>
 
@@ -252,24 +325,67 @@ var STUDENTS = [
 ];
 
 var SESSIONS = [
-  { n:"1",  folder:"week-01", date:"Mon 24 Aug", title:"The Imaginary — Solarpunk",              kind:"content" },
-  { n:"2",  folder:"week-02", date:"Mon 31 Aug", title:"The Practice — Permacomputing",          kind:"content" },
-  { n:"·",  folder:null,      date:"Mon 7 Sep",  title:"Labor Day — campus closed",              kind:"closed",
-    note:"No class. Use the fortnight for artist research and outreach." },
-  { n:"3",  folder:"week-03", date:"Mon 14 Sep", title:"The Analysis — Ecomedia",                kind:"content" },
-  { n:"4",  folder:"week-04", date:"Mon 21 Sep", title:"Proof I — Pull One Further",             kind:"proof" },
-  { n:"5",  folder:"week-05", date:"Mon 28 Sep", title:"Energy Imaginaries",                     kind:"content" },
-  { n:"6",  folder:"week-06", date:"Mon 5 Oct",  title:"Extraction and Its Accounting",          kind:"content" },
-  { n:"7",  folder:"week-07", date:"Mon 12 Oct", title:"Decolonial and Indigenous Futures",      kind:"content" },
-  { n:"8",  folder:"week-08", date:"Mon 19 Oct", title:"Proof II — Pull One Further",            kind:"proof" },
-  { n:"9",  folder:"week-09", date:"Mon 26 Oct", title:"Building the Picture Differently",       kind:"content" },
-  { n:"10", folder:"week-10", date:"Mon 2 Nov",  title:"Care, Repair, Maintenance",              kind:"content" },
-  { n:"11", folder:"week-11", date:"Mon 9 Nov",  title:"Fiction Tests the Method",               kind:"content" },
-  { n:"12", folder:"week-12", date:"Mon 16 Nov", title:"Proof III — Pull One Further",           kind:"proof" },
-  { n:"13", folder:"week-13", date:"Mon 23 Nov", title:"Voice and Form — Whose Words, Set How",  kind:"content" },
-  { n:"14", folder:"week-14", date:"Mon 30 Nov", title:"Final Project I — Reproduction and the Dummy", kind:"final" },
-  { n:"15", folder:"week-15", date:"Mon 7 Dec",  title:"Final Project II — Credit, Print, Bind", kind:"final" },
-  { n:"F",  folder:"final",   date:"Wed 9 Dec",  title:"Final Project III — The Launch",         kind:"final" }
+  { n:"1",  folder:"week-01", date:"Mon 24 Aug", title:"The Imaginary — Solarpunk", kind:"content",
+    comet:1, cometName:"The Comet", cometNote:"1930 · Science Correspondence Club, Chicago. The first science fiction fanzine ever published.",
+    theme:{ ink:"#17509e", accent:"#f2c40c", second:"#c8202e", paper:"#fafbfc", onAccent:"#111014" }, ref:"Comet No. 1 \u2014 cobalt, chrome yellow, pulp red" },
+
+  { n:"2",  folder:"week-02", date:"Mon 31 Aug", title:"The Practice — Permacomputing", kind:"content",
+    comet:2, cometName:"Slant", cometNote:"1948–53 · Walt Willis and James White, Belfast. Hand-set and printed on a press in Willis\u2019s own house.",
+    theme:{ ink:"#1f5f5a", accent:"#d4552a", second:"#2e8b84", paper:"#dff0ea" }, ref:"The Practical Science for Boys and Girls, Tokyo, November 1949" },
+
+  { n:"·",  folder:null, date:"Mon 7 Sep", title:"Labor Day — campus closed", kind:"closed",
+    note:"No class. Use the fortnight for artist research and outreach.",
+    theme:{ ink:"#5a6b72", accent:"#8fa3ab", second:"#5a6b72", paper:"#e6eef0", onAccent:"#23343a" }, ref:"\u2014" },
+
+  { n:"3",  folder:"week-03", date:"Mon 14 Sep", title:"The Analysis — Ecomedia", kind:"content",
+    comet:3, cometName:"Fantasy Commentator", cometNote:"1943– · A. Langley Searles. The scholarly one: criticism and history rather than fiction.",
+    theme:{ ink:"#2a3070", accent:"#d8382c", second:"#3f7f74", paper:"#eef1fb" }, ref:"Amazing Stories, Gernsback era" },
+
+  { n:"4",  folder:"week-04", date:"Mon 21 Sep", title:"Proof I — Pull One Further", kind:"proof",
+    theme:{ ink:"#3a2f4a", accent:"#e0007a", second:"#b8451a", paper:"#fdeaf3" }, ref:"Eternal Reference, NoPattern Studio" },
+
+  { n:"5",  folder:"week-05", date:"Mon 28 Sep", title:"Energy Imaginaries", kind:"content",
+    comet:5, cometName:"Novae Terrae", cometNote:"1936–39 · British fandom\u2019s first. New lands. It became New Worlds.",
+    theme:{ ink:"#16306b", accent:"#d63a1e", second:"#6b3a8a", paper:"#e9eef9" }, ref:"Rocket landing, mid-century paperback plate" },
+
+  { n:"6",  folder:"week-06", date:"Mon 5 Oct", title:"Extraction and Its Accounting", kind:"content",
+    comet:6, cometName:"Quandry", cometNote:"1950–53 · Lee Hoffman, who published under a gender-neutral name and revealed herself as editor at Worldcon in 1951.",
+    theme:{ ink:"#7a1414", accent:"#c9302a", second:"#5f6b72", paper:"#fbe8ea" }, ref:"Vintage Science Fiction Month, Ace" },
+
+  { n:"7",  folder:"week-07", date:"Mon 12 Oct", title:"Decolonial and Indigenous Futures", kind:"content",
+    comet:7, cometName:"Maya", cometNote:"1970s · British fandom. A name that means illusion, and a zine that argued about what fandom was for.",
+    theme:{ ink:"#2b5137", accent:"#c2502e", second:"#4f8a5c", paper:"#e6f2e7" }, ref:"Contemporary zine spreads, Luana Lloyd" },
+
+  { n:"8",  folder:"week-08", date:"Mon 19 Oct", title:"Proof II — Pull One Further", kind:"proof",
+    theme:{ ink:"#4a1f6e", accent:"#cc2a2a", second:"#2f7a4a", paper:"#eceaf8" }, ref:"Flying saucers, pulp cover" },
+
+  { n:"9",  folder:"week-09", date:"Mon 26 Oct", title:"Building the Picture Differently", kind:"content",
+    comet:9, cometName:"Janus", cometNote:"1975–80 · Madison, Wisconsin. Feminist science fiction, later renamed Aurora.",
+    theme:{ ink:"#2b3f9e", accent:"#e0007a", second:"#6b3fb0", paper:"#ffe6f2" }, ref:"Contemporary zine spreads, Luana Lloyd" },
+
+  { n:"10", folder:"week-10", date:"Mon 2 Nov", title:"Care, Repair, Maintenance", kind:"content",
+    comet:10, cometName:"Energumen", cometNote:"1970–73 · Mike Glicksohn and Susan Wood. Won the Hugo for Best Fanzine in 1973.",
+    theme:{ ink:"#3f6b62", accent:"#b0542a", second:"#4f8a5c", paper:"#e4f1ec" }, ref:"The Practical Science for Boys and Girls, Tokyo, 1949" },
+
+  { n:"11", folder:"week-11", date:"Mon 9 Nov", title:"Fiction Tests the Method", kind:"content",
+    comet:11, cometName:"Cheap Truth", cometNote:"1983–86 · Bruce Sterling as \u201cVincent Omniaveritas.\u201d One page, double-sided, uncopyrighted, and openly inviting xerox pirates to reprint it. The unofficial organ of cyberpunk.",
+    theme:{ ink:"#7a2418", accent:"#c9302a", second:"#6b6b6b", paper:"#fbe9e7" }, ref:"Space Cat on Mushrooms, Ruthven Todd" },
+
+  { n:"12", folder:"week-12", date:"Mon 16 Nov", title:"Proof III — Pull One Further", kind:"proof",
+    theme:{ ink:"#1f3320", accent:"#e0007a", second:"#4f7a1a", paper:"#ecf6e8" }, ref:"Eternal Reference, NoPattern Studio" },
+
+  { n:"13", folder:"week-13", date:"Mon 23 Nov", title:"Voice and Form — Whose Words, Set How", kind:"content",
+    comet:13, cometName:"Hyphen", cometNote:"1952–65 · Walt Willis, James White and Bob Shaw, Belfast. Named after a punctuation mark.",
+    theme:{ ink:"#3a3630", accent:"#c0392b", second:"#6b6b45", paper:"#efeeee" }, ref:"Contemporary zine spreads, Luana Lloyd" },
+
+  { n:"14", folder:"week-14", date:"Mon 30 Nov", title:"Final Project I — Reproduction and the Dummy", kind:"final",
+    theme:{ ink:"#1a1a1a", accent:"#e0007a", second:"#5a5a5a", paper:"#edf0f1" }, ref:"Eternal Reference, riso overprint" },
+
+  { n:"15", folder:"week-15", date:"Mon 7 Dec", title:"Final Project II — Credit, Print, Bind", kind:"final",
+    theme:{ ink:"#1f2f8a", accent:"#e0007a", second:"#0f6fa8", paper:"#fdeaf4" }, ref:"Contemporary zine spreads, Luana Lloyd" },
+
+  { n:"F",  folder:"final", date:"Wed 9 Dec", title:"Final Project III — The Launch", kind:"final",
+    theme:{ ink:"#8f1616", accent:"#d81b60", second:"#c9302a", paper:"#fdeaee" }, ref:"Vintage Science Fiction Month, Ace" }
 ];
 
 var BADGE = { content:"Reading week", proof:"Proof", final:"Final project", closed:"No class" };
@@ -294,6 +410,13 @@ function build(){
   SESSIONS.forEach(function(s){
     var card = document.createElement("section");
     card.className = "week";
+    if (s.theme){
+      card.style.setProperty("--w-ink",    s.theme.ink);
+      card.style.setProperty("--w-accent", s.theme.accent);
+      card.style.setProperty("--w-second", s.theme.second);
+      card.style.setProperty("--w-paper",  s.theme.paper);
+      card.style.setProperty("--w-on-accent", s.theme.onAccent || "#fff");
+    }
 
     var head =
       '<div class="tape" aria-hidden="true"></div>' +
@@ -305,12 +428,33 @@ function build(){
           '<h2 class="wtitle">' + esc(s.title) + '</h2>' +
         '</div>' +
         '<span class="badge ' + s.kind + '">' + esc(BADGE[s.kind]) + '</span>' +
-      '</div>';
+      '</div>' +
+      (s.ref && s.ref !== "\u2014" ? '<p class="swatch">Colour after <em>' + esc(s.ref) + '</em></p>' : '');
 
     var body;
     if (!s.folder){
       body = '<p class="closed-note">' + esc(s.note || "No class.") + '</p>';
     } else {
+      var top = "";
+      if (s.comet){
+        top =
+          '<a class="comet" href="comet_' + s.comet + '.html">' +
+            '<span class="comet-star" aria-hidden="true">\u2726</span>' +
+            '<span class="comet-txt">' +
+              '<span class="comet-no">Issue ' + s.comet + '</span>' +
+              '<span class="comet-t">' + esc(s.cometName || "The Comet") + '</span>' +
+              '<span class="comet-s">' + esc(s.cometNote || "") + '</span>' +
+              '<span class="comet-do">Fill this out before class. Export three files, commit them.</span>' +
+            '</span>' +
+            '<span class="comet-go">Open \u2197</span>' +
+          '</a>';
+      } else {
+        top = '<p class="nocomet">No Comet this week. ' +
+          (s.kind === "proof"
+            ? 'Proof day: no reading and no response tool. Bring the pitch.'
+            : 'Final project session: no reading and no response tool.') + '</p>';
+      }
+
       var chips = "";
       for (var i = 1; i <= COUNT; i++){
         var nm = label(i);
@@ -322,7 +466,7 @@ function build(){
             (nm ? '<span class="nm">' + esc(nm) + '</span>' : '') +
           '</a>';
       }
-      body = '<div class="grid">' + chips + '</div>';
+      body = top + '<p class="chips-hd">Submissions \u2014 24 people</p><div class="grid">' + chips + '</div>';
     }
 
     card.innerHTML = head + '<div class="week-body">' + body + '</div>';
