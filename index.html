@@ -98,6 +98,7 @@ select:focus,input:focus{background:#fff}
 .ctrl-note{font-size:11px;line-height:1.5;max-width:230px;color:#3a352c}
 
 /* ── week cards: photocopied, taped, rotated ────────────────────── */
+
 .week{
   --w-ink:var(--ink); --w-accent:var(--pink); --w-second:var(--blue);
   --w-paper:var(--stock); --w-on-accent:#fff;
@@ -197,6 +198,8 @@ footer{
 .colophon h2{font-family:'Anton',sans-serif;font-size:22px;text-transform:uppercase;margin-bottom:10px;color:var(--blue)}
 .colophon code{background:#fff;padding:1px 5px;border:1px solid var(--ink);font-size:11px}
 .colophon a{color:var(--blue)}
+.lineage{margin:10px 0 14px;padding-left:18px}
+.lineage li{margin-bottom:7px;line-height:1.65}
 
 @media (max-width:620px){
   header{padding:30px 14px 24px}
@@ -220,7 +223,7 @@ footer{
     <h1>Climate<br/><span class="slip">Media</span><br/><span class="slip2">Making</span></h1>
     <p class="mast-sub">How can digital media art contribute to the discussion around climate justice,
       ecology, and sustainability? Sixteen sessions. Twenty-four people. Everything they made is below.</p>
-    <div class="scrawl">Mondays 12–3 on Zoom · pull a proof · print the edition</div>
+    <div class="scrawl">Mondays 12–3 on Zoom · finish one together · print the edition</div>
   </div>
 </header>
 
@@ -244,6 +247,17 @@ footer{
     <p class="ctrl-note">Picking a name dims everyone else, so you can read one person straight down the term.</p>
   </section>
 
+  <a class="comet" href="manifesto.html" style="--w-ink:#8f1616;--w-accent:#d81b60;--w-second:#c9302a;--w-paper:#fdeaee;margin-bottom:30px">
+    <span class="comet-star" aria-hidden="true">&#10022;</span>
+    <span class="comet-txt">
+      <span class="comet-no">Made by everyone</span>
+      <span class="comet-t">A Speculative Manifesto</span>
+      <span class="comet-s">Twenty-four plates, one each, plus a preamble the whole class argues over. The visual companion to the Week 3 section manifesto, assembled from the term's SPECULATE answers.</span>
+      <span class="comet-do">File your plate in Week 15. Printed as a broadside for the launch.</span>
+    </span>
+    <span class="comet-go">Open &#8599;</span>
+  </a>
+
   <div id="weeks"></div>
 
   <div class="rule" aria-hidden="true">✂ — ✂ — ✂ — ✂ — ✂ — ✂ — ✂ — ✂ — ✂ — ✂ — ✂ — ✂ — ✂ — ✂ — ✂ — ✂</div>
@@ -256,22 +270,42 @@ footer{
     <p><strong>File layout.</strong> Each session has a folder. Inside it, one file per person:
       <code>week-01/artist_1.html</code> through <code>week-01/artist_24.html</code>, plus
       <code>artist_1.pdf</code> and <code>artist_1.txt</code> alongside. The final session lives in
-      <code>final/</code>. Files are exported straight out of The Comet and committed without renaming.</p>
-    <p><strong>The Comet.</strong> One issue per reading week, sitting at the repository root as
-      <code>comet_1.html</code> through <code>comet_13.html</code>. Issue numbers follow week numbers, so
-      there is no issue 4, 8, or 12: those are proof days, which carry no reading and no response tool.
-      Ten issues in all, each the same tool with a different item list and a different colour scheme.</p>
-    <p><strong>Every issue is named after a real science fiction fanzine.</strong> Not decoration. The zine
-      this course produces belongs to a lineage that began in 1930 with <em>The Comet</em>, mimeographed by
-      the Science Correspondence Club in Chicago, and the names are a way of keeping that visible on the
-      page students open every week. A few are chosen for fit rather than chronology.
-      <em>Slant</em> sits on the permacomputing week because Walt Willis hand-set and printed it on a press
-      in his own house in Belfast. <em>Quandry</em> sits on the measurement week partly for its name and
-      partly because Lee Hoffman edited it under a gender-neutral byline and revealed herself as its editor
-      at Worldcon in 1951. <em>Cheap Truth</em> sits on the week where fiction tests the method, because
-      Bruce Sterling published it uncopyrighted, on one double-sided page, explicitly inviting xerox pirates
-      to reprint it, and used it to attack the state of the field. <em>Hyphen</em> closes the reading weeks
-      because it is named after a punctuation mark and that week is about form.</p>
+      <code>final/</code>. Files are exported straight out of that week's zine and committed without renaming.</p>
+    <p><strong>Ten zines, no house name.</strong> One per reading week, at the repository root, named
+      <code>artist_theorist_1_thecomet.html</code> through
+      <code>artist_theorist_13_newmoon.html</code>. Issue numbers follow week numbers, so there is no
+      Week 4, 8 or 12 zine: those are group project days, which carry no reading and no response tool. Under the
+      hood it is one tool with a different item list and a different colour scheme each week, but it never
+      says so on the page. <strong>A single branded platform that reskins itself weekly would be the thing
+      this course spends fifteen weeks criticising.</strong> Ten separately titled zines, each crediting
+      the people who made the original, is the small-press argument enacted rather than described.</p>
+    <p><strong>Every issue is named after a real zine.</strong> The publication this class produces
+      belongs to a lineage, and the names keep it visible on the page students open each week. It begins
+      with <em>The Comet</em>, mimeographed by the Science Correspondence Club in Chicago in 1930, the
+      first science fiction fanzine there was.</p>
+    <p><strong>Four are placed for craft rather than politics.</strong> <em>Slant</em> sits on the
+      permacomputing week because Walt Willis and James White hand-set and printed it on a press in
+      Willis's own house in Belfast: somebody who built their own publishing infrastructure rather than
+      renting it. <em>Hyphen</em>, from the same Belfast circle, closes the reading weeks because it is
+      named after a punctuation mark and that week is about form. <em>Energumen</em>, Mike Glicksohn and
+      Susan Wood's Hugo winner, sits on the week about care and maintenance. And <em>Slingshot</em>,
+      printed by an all-volunteer collective in Berkeley since 1988 and still given away free, sits on the
+      week about extraction and accounting, because it is the only masthead here that is both local to us
+      and still running.</p>
+    <p><strong>Four are feminist or BIPOC, and each is placed where it does the most work.</strong>
+      <em>The Witch and the Chameleon</em>, the first explicitly feminist fanzine, made by Amanda Bankier
+      in Hamilton, Ontario across five issues, sits on the ecofeminism and xenofeminism week.
+      <em>Aurora</em>, formerly <em>Janus</em>, edited by Janice Bogstad and Jeanne Gomoll in Madison and
+      nominated three times for a Hugo, sits on the energy week for its name.
+      <em>Khatru</em> is here for one issue in particular: the 1975 Women in Science Fiction symposium, in
+      which Russ, Tiptree, Delany, Charnas, Kidd, McIntyre, Wilhelm and Yarbro argued in print with Tiptree
+      still writing as a man. A symposium is an analysis, which is what that week is.
+      <em>Evolution of a Race Riot</em>, Mimi Thi Nguyen's compilation zine in which contributors of colour
+      challenged racism in punk, sits on the decolonial and climate-justice week, and
+      <em>Shotgun Seamstress</em>, Osa Atoe's fanzine by and for Black punks, sits on the Afrofuturism
+      week.</p>
+    <p><strong>The manifesto.</strong> <code>manifesto.html</code> at the repository root. Twenty-four numbered plates; each student drafts a plate in the page's own compose panel and exports a text block, and the class assembles the finished document in Week 15. Empty slots render as dashed placeholders,
+      so the page shows its own gaps rather than hiding them. It prints as a broadside.</p>
     <p><strong>To put real names on the buttons</strong>, edit the <code>STUDENTS</code> list at the top of
       this file's script. Filenames never change, so nothing breaks when a name is added, corrected, or removed.
       Leave an entry empty and the button shows its number alone.</p>
@@ -282,10 +316,10 @@ footer{
       <strong>Each palette is lifted from a real cover</strong>, named under the heading of the card it
       belongs to.</p>
     <p><strong>Each card is the palette of its own issue.</strong> Week 1 uses the exact variables from
-      <code>comet_1.html</code>: aubergine, lime, deep teal, on pale lime. Open the card and the issue side
-      by side and they are the same object. The cards for issues not yet built are the specification for
-      them: when Comet No. 2 is made, it takes its <code>--cobalt</code>, <code>--chrome</code> and
-      <code>--pulpred</code> from the Week 2 card, not the other way round.</p>
+      <code>artist_theorist_1_thecomet.html</code>. Open the card and the zine side by side and they are
+      the same object. Each card is the specification for its own zine: <em>Slant</em> takes its
+      <code>--cobalt</code>, <code>--chrome</code> and <code>--pulpred</code> from the Week 2 card, not the
+      other way round.</p>
     <p>The inks and accents are taken from the covers named on each card; the papers are not.
       Every stock in this set is a cool neutral, tinted only toward its own week's hue, because a page of
       seventeen cream cards reads as one beige field rather than seventeen distinct sessions.
@@ -294,7 +328,7 @@ footer{
       cover on pale rose, which suits a week about extraction and its accounting. Weeks 2 and 10 come from
       a Japanese science magazine for children, Tokyo, November 1949: deep teal and a red-orange bus, over
       mint. Week 8 takes the violet of a flying-saucer cover. Week 11 is <em>Space Cat on Mushrooms</em>,
-      brick red over clay. The proof days and Week 14 come from NoPattern Studio's
+      brick red over clay. The group project days and Week 14 come from NoPattern Studio's
       <em>Eternal Reference</em>, hot pink and magenta over plum and deep green. Weeks 7, 9, 13 and 15
       come from contemporary zine spreads by Luana Lloyd: forest and terracotta, cobalt and hot pink,
       dusty rose.</p>
@@ -304,6 +338,55 @@ footer{
       accent, chip text on hover, and body text on paper. Nothing sits below a ratio of 3.</p>
     <p>Every combination was checked for contrast on four pairs: the week number against its block, badge
       text against accent, chip text on hover, and body text on paper. Nothing sits below a ratio of 3.</p>
+    <p><strong>Look at the originals.</strong> The point of the names is lost if nobody ever sees the
+      zines. Eight of the ten have a link, and two of those go to complete scans rather than to a description.
+      The remaining two are named precisely enough to find.</p>
+    <ul class="lineage">
+      <li><strong>The Comet</strong> (1930) — scans of surviving issues at FANAC, the Fan History Project:
+        <a href="https://fanac.org/fanzines/Comet/">fanac.org/fanzines/Comet</a> ·
+        <a href="https://fanlore.org/wiki/The_Comet_(1930s_zine)">Fanlore</a> ·
+        <a href="https://en.wikipedia.org/wiki/The_Comet_(fanzine)">Wikipedia</a>.
+        Seventeen issues, 1930 to 1933, retitled <em>Cosmology</em> after the third.</li>
+      <li><strong>Slant</strong> (1948–53) —
+        <a href="https://en.wikipedia.org/wiki/Slant_(fanzine)">Wikipedia</a>.
+        Won the Retro-Hugo for Best Fanzine of 1954, awarded in 2004.</li>
+      <li><strong>Hyphen</strong> (1952–65) —
+        <a href="https://en.wikipedia.org/wiki/Hyphen_(fanzine)">Wikipedia</a>.
+        Thirty-six issues from the same Belfast circle as <em>Slant</em>, plus a thirty-seventh made in 1987
+        for the fortieth anniversary of Irish fandom.</li>
+      <li><strong>Energumen</strong> (1970–73) —
+        <a href="https://en.wikipedia.org/wiki/Energumen_(magazine)">Wikipedia</a>.
+        Fifteen issues from Ottawa, Hugo for Best Fanzine in 1973, and an eleventh-anniversary issue in
+        1981 after Susan Wood's death.</li>
+      <li><strong>The Witch and the Chameleon</strong> (1974–76) —
+        <a href="https://en.wikipedia.org/wiki/The_Witch_and_the_Chameleon">Wikipedia</a> ·
+        <a href="https://umbcspecialcollections.omeka.net/exhibits/show/cosletsapienzafancoll/essays/janus-aurora">UMBC Special Collections</a>.
+        Five issues, the last a double. Bankier was Fan Guest of Honour at the first WisCon in 1977 for it.</li>
+      <li><strong>Aurora</strong>, formerly <em>Janus</em> (1975–87) —
+        <a href="https://umbcspecialcollections.omeka.net/exhibits/show/cosletsapienzafancoll/essays/janus-aurora">UMBC Special Collections</a>,
+        which has covers and an essay on both.</li>
+      <li><strong>Evolution of a Race Riot</strong> (1997) — <strong>the full zine is scanned</strong>, put
+        online by the POC Zine Project:
+        <a href="http://issuu.com/poczineproject/docs/evolution-of-a-race-riot-issue-1">issue 1</a> ·
+        <a href="http://issuu.com/poczineproject/docs/race-riot-2">Race Riot 2</a> (2002).
+        Published in Berkeley. Contributors of colour recounting their experience of overwhelmingly white,
+        male punk scenes across North America.</li>
+      <li><strong>Shotgun Seamstress</strong> (2006–15) — the first six issues exist as a collected
+        anthology, originally from Mend My Dress Press and later reissued.
+        <a href="https://www.goodreads.com/book/show/17033802">Details and contents</a>.
+        Atoe began it in Portland and finished it in New Orleans; she won the Printed Matter Award for
+        Artists in 2009 and toured with the POC Zine Project.</li>
+      <li><strong>Slingshot</strong> (1988– ) — still printing in Berkeley, and still free. Back issues
+        from 1988 onward are held in university alternative-press collections; the collective also
+        publishes the Slingshot Organizer, which is what funds the paper.</li>
+      <li><strong>Khatru</strong> (1975) — no confirmed stable page. The Women in Science Fiction
+        symposium from issues 3 and 4 was reprinted by Aqueduct Press; search that.</li>
+    </ul>
+    <p><strong>Two places to browse further:</strong>
+      <a href="https://fanac.org/fanzines/Comet/">FANAC</a> hosts scanned runs of hundreds of fanzines, and
+      <a href="https://lib.guides.umbc.edu/fanzines">UMBC's fanzine guide</a> and the
+      <a href="https://sf-encyclopedia.com/entry/fanzine">SF Encyclopedia's fanzine entry</a> are the two
+      best maps of the field. The Barnard Zine Library link in the syllabus covers the non-SF side.</p>
     <p>Set in Anton, Space Mono, and Permanent Marker. Overprinted the way a two-pass riso never quite
       lines up. Hosted on GitHub Pages. No trackers, no analytics, no cookies.</p>
   </div>
@@ -326,11 +409,11 @@ var STUDENTS = [
 
 var SESSIONS = [
   { n:"1",  folder:"week-01", date:"Mon 24 Aug", title:"The Imaginary — Solarpunk", kind:"content",
-    comet:1, cometName:"The Comet", cometNote:"1930 · Science Correspondence Club, Chicago. The first science fiction fanzine ever published.",
-    theme:{ ink:"#17509e", accent:"#f2c40c", second:"#c8202e", paper:"#fafbfc", onAccent:"#111014" }, ref:"Comet No. 1 \u2014 cobalt, chrome yellow, pulp red" },
+    comet:1, cometFile:"artist_theorist_1_thecomet.html", cometName:"The Comet", cometNote:"1930 · Science Correspondence Club, Chicago. The first science fiction fanzine ever published.",
+    theme:{ ink:"#17509e", accent:"#f2c40c", second:"#c8202e", paper:"#fafbfc", onAccent:"#111014" }, ref:"The Comet \u2014 cobalt, chrome yellow, pulp red" },
 
   { n:"2",  folder:"week-02", date:"Mon 31 Aug", title:"The Practice — Permacomputing", kind:"content",
-    comet:2, cometName:"Slant", cometNote:"1948–53 · Walt Willis and James White, Belfast. Hand-set and printed on a press in Willis\u2019s own house.",
+    comet:2, cometFile:"artist_theorist_2_slant.html", cometName:"Slant", cometNote:"1948–53 · Walt Willis and James White, Belfast. Hand-set and printed on a press in Willis's own house.",
     theme:{ ink:"#1f5f5a", accent:"#d4552a", second:"#2e8b84", paper:"#dff0ea" }, ref:"The Practical Science for Boys and Girls, Tokyo, November 1949" },
 
   { n:"·",  folder:null, date:"Mon 7 Sep", title:"Labor Day — campus closed", kind:"closed",
@@ -338,44 +421,44 @@ var SESSIONS = [
     theme:{ ink:"#5a6b72", accent:"#8fa3ab", second:"#5a6b72", paper:"#e6eef0", onAccent:"#23343a" }, ref:"\u2014" },
 
   { n:"3",  folder:"week-03", date:"Mon 14 Sep", title:"The Analysis — Ecomedia", kind:"content",
-    comet:3, cometName:"Fantasy Commentator", cometNote:"1943– · A. Langley Searles. The scholarly one: criticism and history rather than fiction.",
+    comet:3, cometFile:"artist_theorist_3_khatru.html", cometName:"Khatru", cometNote:"1975 · Jeffrey D. Smith. Issues 3/4 were the Women in Science Fiction symposium: Russ, Tiptree, Delany, Charnas, Kidd, McIntyre, Wilhelm, Yarbro.",
     theme:{ ink:"#2a3070", accent:"#d8382c", second:"#3f7f74", paper:"#eef1fb" }, ref:"Amazing Stories, Gernsback era" },
 
-  { n:"4",  folder:"week-04", date:"Mon 21 Sep", title:"Proof I — Pull One Further", kind:"proof",
+  { n:"4",  folder:"week-04", date:"Mon 21 Sep", title:"Group Project I — Push One Further", kind:"proof",
     theme:{ ink:"#3a2f4a", accent:"#e0007a", second:"#b8451a", paper:"#fdeaf3" }, ref:"Eternal Reference, NoPattern Studio" },
 
   { n:"5",  folder:"week-05", date:"Mon 28 Sep", title:"Energy Imaginaries", kind:"content",
-    comet:5, cometName:"Novae Terrae", cometNote:"1936–39 · British fandom\u2019s first. New lands. It became New Worlds.",
+    comet:5, cometFile:"artist_theorist_5_aurora.html", cometName:"Aurora", cometNote:"1981–87 · Janice Bogstad and Jeanne Gomoll, Madison. Formerly Janus, nominated three times for the Hugo.",
     theme:{ ink:"#16306b", accent:"#d63a1e", second:"#6b3a8a", paper:"#e9eef9" }, ref:"Rocket landing, mid-century paperback plate" },
 
   { n:"6",  folder:"week-06", date:"Mon 5 Oct", title:"Extraction and Its Accounting", kind:"content",
-    comet:6, cometName:"Quandry", cometNote:"1950–53 · Lee Hoffman, who published under a gender-neutral name and revealed herself as editor at Worldcon in 1951.",
+    comet:6, cometFile:"artist_theorist_6_slingshot.html", cometName:"Slingshot", cometNote:"1988– · An all-volunteer collective in Berkeley. Still printing, still free.",
     theme:{ ink:"#7a1414", accent:"#c9302a", second:"#5f6b72", paper:"#fbe8ea" }, ref:"Vintage Science Fiction Month, Ace" },
 
   { n:"7",  folder:"week-07", date:"Mon 12 Oct", title:"Decolonial and Indigenous Futures", kind:"content",
-    comet:7, cometName:"Maya", cometNote:"1970s · British fandom. A name that means illusion, and a zine that argued about what fandom was for.",
+    comet:7, cometFile:"artist_theorist_7_evolutionofaraceriot.html", cometName:"Evolution of a Race Riot", cometNote:"1997, second issue 2002 · Mimi Thi Nguyen. Contributors of colour challenging racism in punk.",
     theme:{ ink:"#2b5137", accent:"#c2502e", second:"#4f8a5c", paper:"#e6f2e7" }, ref:"Contemporary zine spreads, Luana Lloyd" },
 
-  { n:"8",  folder:"week-08", date:"Mon 19 Oct", title:"Proof II — Pull One Further", kind:"proof",
+  { n:"8",  folder:"week-08", date:"Mon 19 Oct", title:"Group Project II — Push One Further", kind:"proof",
     theme:{ ink:"#4a1f6e", accent:"#cc2a2a", second:"#2f7a4a", paper:"#eceaf8" }, ref:"Flying saucers, pulp cover" },
 
   { n:"9",  folder:"week-09", date:"Mon 26 Oct", title:"Building the Picture Differently", kind:"content",
-    comet:9, cometName:"Janus", cometNote:"1975–80 · Madison, Wisconsin. Feminist science fiction, later renamed Aurora.",
+    comet:9, cometFile:"artist_theorist_9_shotgunseamstress.html", cometName:"Shotgun Seamstress", cometNote:"2006–15 · Osa Atoe. A fanzine by and for Black punks, hand-laid and photocopied in small batches.",
     theme:{ ink:"#2b3f9e", accent:"#e0007a", second:"#6b3fb0", paper:"#ffe6f2" }, ref:"Contemporary zine spreads, Luana Lloyd" },
 
   { n:"10", folder:"week-10", date:"Mon 2 Nov", title:"Care, Repair, Maintenance", kind:"content",
-    comet:10, cometName:"Energumen", cometNote:"1970–73 · Mike Glicksohn and Susan Wood. Won the Hugo for Best Fanzine in 1973.",
+    comet:10, cometFile:"artist_theorist_10_energumen.html", cometName:"Energumen", cometNote:"1970–73 · Mike Glicksohn and Susan Wood, Toronto. Won the Hugo for Best Fanzine in 1973.",
     theme:{ ink:"#3f6b62", accent:"#b0542a", second:"#4f8a5c", paper:"#e4f1ec" }, ref:"The Practical Science for Boys and Girls, Tokyo, 1949" },
 
   { n:"11", folder:"week-11", date:"Mon 9 Nov", title:"Fiction Tests the Method", kind:"content",
-    comet:11, cometName:"Cheap Truth", cometNote:"1983–86 · Bruce Sterling as \u201cVincent Omniaveritas.\u201d One page, double-sided, uncopyrighted, and openly inviting xerox pirates to reprint it. The unofficial organ of cyberpunk.",
+    comet:11, cometFile:"artist_theorist_11_thewitchandthechameleon.html", cometName:"The Witch and the Chameleon", cometNote:"1974–76 · Amanda Bankier, Hamilton, Ontario. The first explicitly feminist fanzine. Five issues.",
     theme:{ ink:"#7a2418", accent:"#c9302a", second:"#6b6b6b", paper:"#fbe9e7" }, ref:"Space Cat on Mushrooms, Ruthven Todd" },
 
-  { n:"12", folder:"week-12", date:"Mon 16 Nov", title:"Proof III — Pull One Further", kind:"proof",
+  { n:"12", folder:"week-12", date:"Mon 16 Nov", title:"Group Project III — Push One Further", kind:"proof",
     theme:{ ink:"#1f3320", accent:"#e0007a", second:"#4f7a1a", paper:"#ecf6e8" }, ref:"Eternal Reference, NoPattern Studio" },
 
   { n:"13", folder:"week-13", date:"Mon 23 Nov", title:"Voice and Form — Whose Words, Set How", kind:"content",
-    comet:13, cometName:"Hyphen", cometNote:"1952–65 · Walt Willis, James White and Bob Shaw, Belfast. Named after a punctuation mark.",
+    comet:13, cometFile:"artist_theorist_13_hyphen.html", cometName:"Hyphen", cometNote:"1952–65 · Walt Willis, James White and Bob Shaw, Belfast. Named after a punctuation mark.",
     theme:{ ink:"#3a3630", accent:"#c0392b", second:"#6b6b45", paper:"#efeeee" }, ref:"Contemporary zine spreads, Luana Lloyd" },
 
   { n:"14", folder:"week-14", date:"Mon 30 Nov", title:"Final Project I — Reproduction and the Dummy", kind:"final",
@@ -388,7 +471,7 @@ var SESSIONS = [
     theme:{ ink:"#8f1616", accent:"#d81b60", second:"#c9302a", paper:"#fdeaee" }, ref:"Vintage Science Fiction Month, Ace" }
 ];
 
-var BADGE = { content:"Reading week", proof:"Proof", final:"Final project", closed:"No class" };
+var BADGE = { content:"Reading week", proof:"Group project", final:"Final project", closed:"No class" };
 
 /* ══ machinery ═══════════════════════════════════════════════════════ */
 var COUNT = 24;
@@ -438,11 +521,11 @@ function build(){
       var top = "";
       if (s.comet){
         top =
-          '<a class="comet" href="comet_' + s.comet + '.html">' +
+          '<a class="comet" href="' + esc(s.cometFile) + '">' +
             '<span class="comet-star" aria-hidden="true">\u2726</span>' +
             '<span class="comet-txt">' +
-              '<span class="comet-no">Issue ' + s.comet + '</span>' +
-              '<span class="comet-t">' + esc(s.cometName || "The Comet") + '</span>' +
+              '<span class="comet-no">Week ' + s.n + ' zine</span>' +
+              '<span class="comet-t">' + esc(s.cometName || "This week's zine") + '</span>' +
               '<span class="comet-s">' + esc(s.cometNote || "") + '</span>' +
               '<span class="comet-do">Fill this out before class. Export three files, commit them.</span>' +
             '</span>' +
@@ -451,7 +534,7 @@ function build(){
       } else {
         top = '<p class="nocomet">No Comet this week. ' +
           (s.kind === "proof"
-            ? 'Proof day: no reading and no response tool. Bring the pitch.'
+            ? 'Group project day: no reading and no response tool. Bring the pitch.'
             : 'Final project session: no reading and no response tool.') + '</p>';
       }
 
